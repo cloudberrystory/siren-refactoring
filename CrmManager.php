@@ -4,15 +4,10 @@ declare(strict_types=1);
 
 namespace App;
 
-/**
- * Class CrmManager
- *
- * @package App
- */
 final class CrmManager
 {
     public function __construct(
-        private readonly AbstractSender $client,
+        private readonly Sender $client,
     ) {
     }
 

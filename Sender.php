@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace App;
 
-final class Sender
+interface Sender
 {
-    protected array $settings;
-
-    public function setCredentials(array $settings)
-    {
-        $this->settings = $settings;
-    }
+    /**
+     * Sends data to some crm
+     *
+     * @param  Action  $action
+     * @param  AbstractPayload  $payload
+     *
+     * @return int
+     */
+    public function send(Action $action, AbstractPayload $payload): int;
 }
